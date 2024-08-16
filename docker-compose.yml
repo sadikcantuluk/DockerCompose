@@ -1,0 +1,48 @@
+# version: '3.4'
+
+# services:
+#   sqlserver:
+#     image: mcr.microsoft.com/mssql/server:2022-latest
+#   microservis1.api:
+#     image: microservis1-image
+#     container_name: "microservis1-container"
+#     build:
+#       context: .
+#       dockerfile: Microservis1.API/Dockerfile
+#   microservis2.api:
+#     image: microservis2-image
+#     container_name: "microservis2-container"
+#     build:
+#       context: .
+#       dockerfile: Microservis2.API/Dockerfile
+# volumes:
+#   sqlserver_volume:
+
+
+
+
+version: '3.4'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+  microservis1.api:
+    image: sadikcantuluk/mikroservis1:${version}
+    build:
+      context: .
+      dockerfile: Microservis1.API/Dockerfile
+  microservis2.api:
+    image: sadikcantuluk/mikroservis2:${version}
+    build:
+      context: .
+      dockerfile: Microservis2.API/Dockerfile
+volumes:
+  sqlserver_volumeName:
+
+
+
+
+
+
+
+

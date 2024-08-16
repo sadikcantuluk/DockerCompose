@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Microservis1.API.props" />
+</Project>

@@ -1,0 +1,73 @@
+# version: '3.4'
+
+# services:
+#   sqlserver:
+#     environment:
+#       - ACCEPT_EULA=Y
+#       - MSSQL_SA_PASSWORD=Password123*
+#     volumes:
+#       - sqlserver_volume:/var/opt/mssql
+#     ports:
+#       - "1433:1433"
+#   microservis1.api:
+#     environment:
+#       - ASPNETCORE_ENVIRONMENT=Production
+#     ports:
+#       - "5001:80"
+#   microservis2.api:
+#     environment:
+#       - ASPNETCORE_ENVIRONMENT=Production
+#     ports:
+#       - "5002:80"
+
+
+
+
+
+
+
+version: '3.4'
+
+services:
+  sqlserver:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password123*
+      - MSSQL_PID=Evaluation
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_volumeName:/var/opt/mssql
+  microservis1.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5001:80"
+  microservis2.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5002:80"
+
+
+# version: '3.4'
+
+# services:
+#   sqlserver:
+#     environment:
+#       - ACCEPT_EULA=Y
+#       - MSSQL_SA_PASSWORD=Password123*
+#     volumes:
+#       - sqlserver_volume:/var/opt/mssql
+#     ports:
+#       - "1433:1433"
+#   microservis1.api:
+#     environment:
+#       - ASPNETCORE_ENVIRONMENT=Development
+#     ports:
+#       - "5001:80"
+#   microservis2.api:
+#     environment:
+#       - ASPNETCORE_ENVIRONMENT=Development
+#     ports:
+#       - "5002:80"- 

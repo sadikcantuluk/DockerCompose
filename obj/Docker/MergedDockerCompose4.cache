@@ -1,0 +1,33 @@
+name: dockercompose14083295732613825232
+services:
+  microservis1.api:
+    build:
+      context: C:\Users\sadik\OneDrive\Masaüstü\Yeni klasör\DockerCompose
+      dockerfile: Microservis1.API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: sadikcantuluk/mikroservis1:1.0
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5001"
+        protocol: tcp
+  microservis2.api:
+    build:
+      context: C:\Users\sadik\OneDrive\Masaüstü\Yeni klasör\DockerCompose
+      dockerfile: Microservis2.API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: sadikcantuluk/mikroservis2:1.0
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5002"
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose14083295732613825232_default
